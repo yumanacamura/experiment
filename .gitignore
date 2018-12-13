@@ -1,0 +1,3 @@
+data/*.txt
+mecab/*.mecab
+__pycache__
