@@ -12,20 +12,20 @@ def get_idf(bins):
     words = set()
     docs = []
     for bin in bins:
-        doc = (w for w in bin.keys())
+        doc = [w for w in bin.keys()]
         docs.append(doc)
         words = words | set(doc)
-    return {word:np.log(SENTENSE_NUM / len((None for doc in docs if word in doc))) + 1 ) for word in words}
+    return {word:np.log(SENTENSE_NUM / len([1 for doc in docs if word in doc])) + 1  for word in words}
 
 def get_tf_idf(tf, idf):
     return {word:tf2*idf[word] for word,tf2 in tf.items()}
 
 def output(filename, data):
     with open(filename,'w') as f:
-        f.write('\n'.join([' '.join(dt.keys()) for dt in data]))
+        f.write('\n'.join([' '.join(['{0}:{1}'.format(w,v) for w,v in dt.items()]) for dt in data]))
 
 suf = ['cleaner','mp3player','test']
-tfs = [get_tf('../mecab/' + name + '.mecab') for filename in suf]
+tfs = [get_tf('../mecab/' + name + '.mecab') for name in suf]
 bins = [[get_bin(tf) for tf in tfs2] for tfs2 in tfs]
 all_bin = []
 for bins2 in bins:

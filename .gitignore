@@ -1,3 +1,7 @@
-data/*.txt
-mecab/*.mecab
+data/*
+mecab/*
+output/*
 __pycache__
+
+!.keep
+
