@@ -1,6 +1,6 @@
 data/*
 mecab/*
-output/*
+vec/*
 __pycache__
 
 !.keep
