@@ -34,6 +34,6 @@ idf = get_idf(all_bin)
 tf_idf = [[get_tf_idf(tf,idf) for tf in tfs2] for tfs2 in tfs]
 
 for i in range(3):
-    output('../output/' + suf[i] + '.vec=bi.txt', bins[i])
-    output('../output/' + suf[i] + '.vec=tf.txt', tfs[i])
-    output('../output/' + suf[i] + '.vec=tfidf.txt', tf_idf[i])
+    output('../vec/' + suf[i] + '.vec=bi.txt', bins[i])
+    output('../vec/' + suf[i] + '.vec=tf.txt', tfs[i])
+    output('../vec/' + suf[i] + '.vec=tfidf.txt', tf_idf[i])
