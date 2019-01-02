@@ -1,6 +1,7 @@
 data/*
 mecab/*
 vec/*
+k_mean/*
 __pycache__
 
 !.keep
