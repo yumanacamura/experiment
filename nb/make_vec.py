@@ -28,6 +28,7 @@ def get_nb(bins):
         cln = cnt_word(docs[0],w)
         mp3 = cnt_word(docs[1],w)
         sum = cln+mp3
+        sum = sum if sum != 0 else 1
         nbs[w] = [np.log(1000*n/sum + 1) for n in [cln,mp3]]
     return nbs
 
